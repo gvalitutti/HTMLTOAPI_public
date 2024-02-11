@@ -1,0 +1,52 @@
+/* Reset dei margini e dei padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Stile del body */
+body {
+    background-image: url('dashboard-background-sx.jpg');
+    background-size: cover; /* L'immagine copre l'intera area del background */
+    background-position: center; /* L'immagine è posizionata al centro */
+    font-family: Arial, sans-serif; /* Imposta il font predefinito */
+    color: #ffffff; /* Colore del testo bianco */
+}
+
+/* Stile della tabella */
+#customer-table {
+    width: 80%; /* Larghezza della tabella */
+    margin: 50px auto; /* Centra la tabella orizzontalmente e aggiunge spazio sopra e sotto */
+    background-color: rgba(0, 0, 0, 0.5); /* Sfondo traslucido */
+    border-collapse: collapse; /* Unisci i bordi delle celle */
+}
+
+/* Stile dell'intestazione della tabella */
+#customer-table th {
+    background-color: #007bff; /* Colore di sfondo */
+    color: #ffffff; /* Colore del testo */
+    padding: 10px; /* Spazio interno */
+    text-align: left; /* Allinea il testo a sinistra */
+}
+
+/* Stile delle celle della tabella */
+#customer-table td {
+    padding: 10px; /* Spazio interno */
+    border-bottom: 1px solid #ffffff; /* Bordo inferiore */
+}
+
+/* Stile delle righe pari della tabella */
+#customer-table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1); /* Sfondo traslucido per righe pari */
+}
+
+/* Stile delle righe dispari della tabella */
+#customer-table tbody tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.05); /* Sfondo traslucido per righe dispari */
+}
+
+/* Stile del testo all'interno delle celle */
+#customer-table td {
+    color: #ffffff; /* Colore del testo */
+}

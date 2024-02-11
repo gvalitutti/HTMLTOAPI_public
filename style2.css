@@ -1,0 +1,73 @@
+/* Reset dei margini e dei padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.page-title {
+    text-align: center;
+    color: #000000; /* Colore del testo bianco */
+    font-family: 'Times New Roman', Times, serif, sans-serif; /* Font Arial */
+    font-size: 50px; /* Dimensione del font */
+    margin-top: 30px; /* Aggiunge spazio superiore */
+}
+
+/* Stile del body */
+body {
+    background-image: url('dashboard-background-sx.jpg');
+    background-size: 100; /* L'immagine copre l'intera area del background */
+    background-position: center; /* L'immagine è posizionata al centro */
+    font-family: Arial, sans-serif; /* Imposta il font predefinito */
+    color: #000000; /* Colore del testo nero */
+    height: 100vh
+}
+
+/* Stile dell'h1 */
+h1 {
+    text-align: center; /* Allinea il testo al centro */
+    margin-top: 50px; /* Aggiunge spazio sopra */
+    margin-bottom: 30px; /* Aggiunge spazio inferiore */
+}
+
+/* Stile del form */
+form {
+    max-width: 400px; /* Larghezza massima del form */
+    margin: 0 auto; /* Centra il form orizzontalmente */
+    padding: 30px; /* Aggiunge spazio interno */
+    background-color: rgba(255, 255, 255, 0.8); /* Sfondo traslucido bianco */
+    border-radius: 8px; /* Bordi arrotondati */
+}
+
+/* Stile delle etichette del modulo */
+label {
+    display: block; /* Rende l'etichetta un blocco */
+    margin-bottom: 10px; /* Aggiunge spazio inferiore */
+}
+
+/* Stile degli input del modulo */
+input[type="text"] {
+    width: 100%; /* Larghezza del 100% */
+    padding: 10px; /* Spazio interno */
+    margin-bottom: 15px; /* Aggiunge spazio inferiore */
+    border: none; /* Rimuove il bordo */
+    border-radius: 4px; /* Bordi arrotondati */
+}
+
+/* Stile del pulsante del modulo */
+button[type="submit"],
+.button-mod { /* Supponendo che il bottone di modifica abbia una classe .button-mod */
+    width: 100%; /* Larghezza del 100% */
+    padding: 10px; /* Spazio interno */
+    border: none; /* Rimuove il bordo */
+    border-radius: 4px; /* Bordi arrotondati */
+    background-color: #007bff; /* Colore di sfondo */
+    color: #ffffff; /* Colore del testo bianco */
+    cursor: pointer; /* Cursore a puntatore */
+}
+
+/* Stile del pulsante del modulo al passaggio del mouse */
+button[type="submit"]:hover,
+.button-mod:hover { /* Applica lo stesso stile al passaggio del mouse */
+    background-color: #0056b3; /* Cambia il colore di sfondo */
+}
+

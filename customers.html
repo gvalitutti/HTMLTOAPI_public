@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizzazione Dati Clienti</title>
+    <link rel="stylesheet" type="text/css" href="table.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <table id="customer-table">
+        <thead>
+            <tr>
+                <th>Customer ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Company Name</th>
+                <th>Email Address</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody id="customer-list">
+            <!-- Qui verranno visualizzati i dati dei clienti -->
+        </tbody>
+    </table>
+
+    <script>
+        $(document).ready(function() {
+            // Funzione per recuperare tutti i clienti
+            function getAllCustomers() {
+                $.ajax({
+                    url: "http://localhost:2353/api/Customers",
+                    type: "GET",
+                    success: function(data) {
+                        // Svuota il contenuto di #customer-list
+                        $('#customer-list').empty();
+                        
+                        // Itera sui dati JSON e aggiungi righe alla tabella
+                        data.forEach(function(Customer) {
+                            var customerRow = "<tr>" +
+                                "<td>" + Customer.customerId + "</td>" +
+                                "<td>" + Customer.firstName + "</td>" +
+                                "<td>" + Customer.lastName + "</td>" +
+                                "<td>" + Customer.companyName + "</td>" +
+                                "<td>" + Customer.emailAddress + "</td>" +
+                                "<td>" + Customer.phone + "</td>" +
+                                "</tr>";
+                            $('#customer-list').append(customerRow);
+                        });
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                    }
+                });
+            }
+
+            // Chiama la funzione per recuperare tutti i clienti all'avvio
+            getAllCustomers();
+        });
+    </script>
+</body>
+</html>
