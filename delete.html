@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elimina Utente</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Elimina Utente</h1>
+    
+    <form id="delete-form">
+        <label for="customer-id">Customer ID:</label>
+        <input type="text" id="customer-id" name="customer-id">
+        <button type="submit">Elimina Utente</button>
+    </form>
+
+    <script>
+        $(document).ready(function() {
+            // Gestione dell'invio del modulo
+            $('#delete-form').submit(function(event) {
+                
+                event.preventDefault();
+
+                // Ottieni l'ID del cliente dal campo di input
+                var customerId = $('#customer-id').val();
+
+                // Esegui la richiesta DELETE per eliminare il cliente
+                $.ajax({
+                    url: "http://localhost:2353/api/Customers/" + customerId,
+                    type: "DELETE",
+
+                });
+            });
+        });
+    </script>
+</body>
+</html>

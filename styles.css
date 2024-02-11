@@ -1,0 +1,43 @@
+/* Reset CSS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: "Lato", sans-serif;
+    background-color: #484848;
+    color: #ffffff;
+  }
+  
+  nav {
+    background-color: #333;
+    overflow: hidden;
+    text-align: center; /* Centra gli elementi della lista */
+  }
+  
+  .nav-toggle-label {
+    display: none; /* Rimuove l'icona del menu */
+  }
+  
+  .nav-list {
+    display: inline-block; /* Imposta la lista come inline-block */
+  }
+  
+  .nav-list li {
+    display: inline-block; /* Imposta gli elementi della lista come inline-block */
+    margin-right: 10px; /* Aggiunge spazio tra gli elementi della lista */
+  }
+  
+  .nav-list li a {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  .nav-list li a:hover {
+    background-color: #555;
+  }
+  

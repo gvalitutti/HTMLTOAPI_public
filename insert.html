@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserimento Cliente</title>
+</head>
+<body>
+    <h1>Inserimento Cliente</h1>
+    <form id="customerForm">
+        <label for="title">Titolo:</label>
+        <input type="text" id="title" name="title"><br><br>
+
+        <label for="firstName">Nome:</label>
+        <input type="text" id="firstName" name="firstName"><br><br>
+
+        <label for="lastName">Cognome:</label>
+        <input type="text" id="lastName" name="lastName"><br><br>
+
+        <label for="emailAddress">Indirizzo Email:</label>
+        <input type="email" id="emailAddress" name="emailAddress"><br><br>
+
+        <label for="phone">Telefono:</label>
+        <input type="tel" id="phone" name="phone"><br><br>
+
+        <input type="hidden" id="rowguid" name="rowguid">
+        <input type="hidden" id="passwordHash" name="passwordHash">
+        <input type="hidden" id="passwordSalt" name="passwordSalt">
+        <input type="hidden" id="modifiedDate" name="modifiedDate">
+
+        <button type="submit">Invia</button>
+    </form>
+
+    <script>
+        document.getElementById("customerForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita il comportamento di default del form
+
+            // Ottieni i dati dal form
+            const formData = new FormData(this);
+
+            // Genera il valore per rowguid (UUID v4)
+            formData.append("rowguid", uuidv4());
+
+            // Genera la data corrente nel formato ISO
+            formData.append("modifiedDate", new Date().toISOString());
+
+            // Effettua una richiesta POST per inserire il cliente
+            fetch("http://localhost:2353/api/Customers", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(Object.fromEntries(formData))
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Errore nella richiesta POST");
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log("Dati inseriti con successo:", data);
+                // Aggiungi qui logica aggiuntiva se necessario
+                alert("Cliente inserito con successo!");
+            })
+            .catch(error => {
+                console.error("Errore:", error);
+                alert("Si è verificato un errore durante l'inserimento del cliente.");
+            });
+        });
+
+        // Funzione per generare un UUID v4
+        function uuidv4() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+        }
+    </script>
+</body>
+</html>
