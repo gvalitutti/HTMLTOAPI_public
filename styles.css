@@ -16,16 +16,9 @@ body {
     justify-content: center; /* Centra il contenuto verticalmente */
     align-items: center; /* Centra il contenuto orizzontalmente */
     height: 100vh; /* Altezza pari all'altezza del viewport */
-    padding: 20px; /* Aggiunge spazio interno */
     border-radius: 20px; /* Bordi arrotondati */
     background-color: rgba(0, 0, 0, 0.5); /* Sfondo traslucido */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Ombra */
-}
-
-
-/* Stile dell'header */
-header {
-    margin-bottom: 20px; /* Aggiunge spazio inferiore */
 }
 
 /* Stile dell'h1 */
@@ -37,34 +30,43 @@ h1 {
     margin-top: 30px; /* Aggiunge spazio superiore */
 }
 
+
 /* Stile del menu di navigazione */
 .navbar {
     background-color: rgba(255, 255, 255, 0.5); /* Sfondo traslucido */
-    padding: 20px 0; /* Aumenta lo spazio interno sopra e sotto */
-    border-radius: 20px; /* Bordi arrotondati */
+    padding: 50px 0; /* Aumenta lo spazio interno sopra e sotto */
+    border-radius: 30px; /* Bordi arrotondati */
     height: 80px; /* Altezza del menu */
 }
 
 
 .navbar-nav {
-    margin: auto; /* Centra gli elementi del menu orizzontalmente */
+    display: flex; /* Utilizza il layout flessibile */
+    justify-content: center; /* Centra gli elementi del menu orizzontalmente */
+    align-items: center; /* Centra gli elementi del menu verticalmente */
+    list-style: none; /* Rimuove i puntini dalla lista */
+    text-align: center; /* Centra il testo orizzontalmente */
 }
+
 
 .navbar-nav .nav-link {
-    font-size: 18px; /* Dimensione del font */
+    margin: 0 10px; /* Aggiunge spazio orizzontale tra le voci di menu */
+    font-size: 24px; /* Dimensione del font */
     color: #000000; /* Colore del testo nero */
     text-transform: uppercase; /* Testo in maiuscolo */
-    padding: 10px 20px; /* Spazio interno */
+    padding: 10px 60px; /* Spazio interno */
     transition: color 0.3s; /* Transizione del colore al passaggio del mouse */
+    text-decoration: none; /* Rimuove la sottolineatura */
 }
 
-.navbar-nav .nav-link:hover,
+
 .navbar-nav .nav-link:focus {
     color: #ffffff; /* Cambia il colore del testo al passaggio del mouse */
     text-decoration: none; /* Rimuove il sottolineato */
 }
 
-/* Stile per il menu attivo */
-.navbar-nav .nav-item.active .nav-link {
-    font-weight: bold; /* Testo in grassetto per il menu attivo */
+.navbar-nav .nav-link .bi {
+    font-size: 24px; /* Imposta la dimensione delle icone */
+    vertical-align: middle; /* Allinea verticalmente le icone al testo */
+    margin-right: 10px; /* Aggiunge uno spazio a destra tra l'icona e il testo */
 }
